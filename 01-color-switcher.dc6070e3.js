@@ -1,0 +1,2 @@
+!function(){var t=document.body,e=document.querySelector("button[data-start]"),n=document.querySelector("button[data-stop]");e.addEventListener("click",(function(){e.disabled=!0,n.disabled=!1,switchInterval=setInterval((function(){t.style.backgroundColor="#".concat(Math.floor(16777215*Math.random()).toString(16).padStart(6,0))}),1e3)})),n.addEventListener("click",(function(){e.disabled=!1,n.disabled=!0,clearInterval(switchInterval)}))}();
+//# sourceMappingURL=01-color-switcher.dc6070e3.js.map
