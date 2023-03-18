@@ -5,13 +5,13 @@ const stopBtnEl = document.querySelector('button[data-stop]');
 startBtnEl.addEventListener('click', colorSwitchHandler);
 stopBtnEl.addEventListener('click', stopColorSwitchHandler);
 
+stopBtnEl.disabled = true;
+
 function colorSwitchHandler() {
   startBtnEl.disabled = true;
   stopBtnEl.disabled = false;
 
-  switchInterval = setInterval(() => {
-    bodyEl.style.backgroundColor = getRandomHexColor();
-  }, 1000);
+  return (switchInterval = setInterval(switchBodyColor, 1000));
 }
 
 function stopColorSwitchHandler() {
@@ -19,6 +19,10 @@ function stopColorSwitchHandler() {
   stopBtnEl.disabled = true;
 
   clearInterval(switchInterval);
+}
+
+function switchBodyColor() {
+  bodyEl.style.backgroundColor = getRandomHexColor();
 }
 
 function getRandomHexColor() {
