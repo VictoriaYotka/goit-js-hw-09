@@ -7,11 +7,15 @@ stopBtnEl.addEventListener('click', stopColorSwitchHandler);
 
 stopBtnEl.disabled = true;
 
+let switchInterval = null;
+
 function colorSwitchHandler() {
   startBtnEl.disabled = true;
   stopBtnEl.disabled = false;
 
-  return (switchInterval = setInterval(switchBodyColor, 1000));
+  switchBodyColor();
+
+  switchInterval = setInterval(switchBodyColor, 1000);
 }
 
 function stopColorSwitchHandler() {
