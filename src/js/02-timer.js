@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const dateInputEl = document.querySelector('#datetime-picker');
 const btnEl = document.querySelector('button');
@@ -35,7 +36,7 @@ const fpSettingsObj = {
     }
 
     btnEl.disabled = true;
-    window.alert('Please choose a date in the future');
+    Notify.warning('Please choose a date in the future');
   },
 };
 
