@@ -4,10 +4,14 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const dateInputEl = document.querySelector('#datetime-picker');
 const btnEl = document.querySelector('button');
-const daysCounterEl = document.querySelector('.value[data-days]');
-const hoursCounterEl = document.querySelector('.value[data-hours]');
-const minutesCounterEl = document.querySelector('.value[data-minutes]');
-const secondsCounterEl = document.querySelector('.value[data-seconds]');
+const dateContainer = document.querySelector('.timer');
+const daysCounterEl = dateContainer.children[0].children[0];
+const hoursCounterEl = dateContainer.children[1].children[0];
+const minutesCounterEl = dateContainer.children[2].children[0];
+const secondsCounterEl = dateContainer.children[3].children[0];
+
+btnEl.classList.add('btn');
+dateContainer.classList.add('timer_container');
 
 btnEl.addEventListener('click', timerStartHandler);
 

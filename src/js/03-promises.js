@@ -2,6 +2,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const formEl = document.querySelector('.form');
 
+formEl.lastElementChild.classList.add('btn');
+
 const promiseObj = {};
 
 let timeoutId = null;
