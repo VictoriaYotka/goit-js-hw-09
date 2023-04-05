@@ -13,7 +13,7 @@ formEl.addEventListener('submit', formSubmitHandler);
 function formSubmitHandler (event) {
   event.preventDefault();
 
-  formValuesPicker();
+  formValuesPicker(event);
 
   let { delay, step, amount } = promiseObj;
 
@@ -32,7 +32,7 @@ function formSubmitHandler (event) {
   }     
 }
 
-function formValuesPicker () {
+function formValuesPicker (event) {
   promiseObj.delay = Number(event.currentTarget.elements.delay.value);
   promiseObj.step = Number(event.currentTarget.elements.step.value);
   promiseObj.amount = Number(event.currentTarget.elements.amount.value);
